@@ -1,0 +1,41 @@
+{
+  "$comment": "This file is itself inside the protected set — see protectedArtefacts below — so narrowing the protected set requires the same review as changing a specification.",
+
+  "protectedArtefacts": [
+    "tests/**",
+    "spec/**",
+    "practice.json"
+  ],
+
+  "materialContributionPolicy": {
+    "statement": "An agent's contribution to a change is material if any of the following is true: (a) more than a trivial amount of the change's non-whitespace content originated from the agent; (b) the agent chose the structure, name, or interface of anything that persists past the change; (c) the change would not have been produced, or would have been substantially different, without the agent.",
+    "appliesTo": "Every commit. A commit meeting any clause above carries the attestation trailer described in attestation below.",
+    "notMaterial": [
+      "Whitespace-only or formatter-driven changes",
+      "Agent used solely to look something up, with no output incorporated into the change"
+    ]
+  },
+
+  "attestation": {
+    "trailerKeys": {
+      "agentAuthored": "Agent-Authored",
+      "tool": "Tool",
+      "model": "Model"
+    },
+    "format": "Agent-Authored: true\nTool: <tool-slug>\nModel: <model-slug>",
+    "conventions": [
+      "Values are lowercase-hyphenated slugs. Tool and Model values must be written identically by every member for the same tool or model.",
+      "Commits with no material agent contribution carry no trailer. Do not write 'Agent-Authored: false'.",
+      "No URLs in any trailer value. The attestation record must be self-contained in the commit message."
+    ]
+  },
+
+  "accountableHumans": [
+    {
+      "scope": "*",
+      "note": "Per-commit accountability is the commit author. Replace this with named scopes if ownership is divided."
+    }
+  ],
+
+  "assessmentWindowDays": 90
+}
