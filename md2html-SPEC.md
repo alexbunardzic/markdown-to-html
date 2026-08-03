@@ -29,9 +29,9 @@ their HTML equivalents by `md2html`:
 - **Inline code** — backtick-wrapped spans → `<code>`
 - **Bold** — `**text**` or `__text__` → `<strong>`
 - **Italic** — `*text*` or `_text_` → `<em>`
-- **Bold + italic** — `***text***` → `<strong><em>`
 - **Inline links** — `[text](url)` → `<a href="url">`
-- **Strikethrough** — `~~text~~` → `<del>`
+- **Escaping and HTML safety**
+- **Paragraphs**
 
 ## Out of scope
 
