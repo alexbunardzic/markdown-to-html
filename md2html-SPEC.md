@@ -18,6 +18,21 @@ derived from it and a reviewer can check the test against it.
 - **If an implementation and this document disagree, this document is
   correct** until the mob amends it. Amend first, then change the code.
 
+## Scope
+
+The following Markdown structures are **in scope** and must be converted to
+their HTML equivalents by `md2html`:
+
+- **ATX headings** — `#` through `######` → `<h1>` … `<h6>`
+- **Paragraphs** — blank-line-separated blocks of text → `<p>`
+- **Unordered lists** — lines prefixed with `-`, `*`, or `+` → `<ul>` / `<li>`
+- **Inline code** — backtick-wrapped spans → `<code>`
+- **Bold** — `**text**` or `__text__` → `<strong>`
+- **Italic** — `*text*` or `_text_` → `<em>`
+- **Bold + italic** — `***text***` → `<strong><em>`
+- **Inline links** — `[text](url)` → `<a href="url">`
+- **Strikethrough** — `~~text~~` → `<del>`
+
 ## Out of scope
 
 The following Markdown features are **not** handled by `md2html`. The converter
