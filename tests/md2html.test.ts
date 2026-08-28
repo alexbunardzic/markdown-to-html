@@ -27,3 +27,12 @@ describe("Markdown level to HTML element", () => {
     expect(md2html("###### Hello")).toBe("<h6>Hello</h6>");
   });
 });
+
+describe("Long runs of hashes", () => {
+  // NOTE: this contradicts R-H-03 / E-01, which require a paragraph here.
+  // Documents current behaviour at the mob's direction; the spec has not
+  // been amended.
+  it("maps fifteen hashes to <h15>", () => {
+    expect(md2html("############### Hello")).toBe("<h15>Hello</h15>");
+  });
+});
