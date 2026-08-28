@@ -36,3 +36,9 @@ describe("Long runs of hashes", () => {
     expect(md2html("############### Hello")).toBe("<h15>Hello</h15>");
   });
 });
+
+describe("Exactly one space required after the hashes", () => {
+  it("treats a hash run with no following space as a paragraph [R-H-02, E-02]", () => {
+    expect(md2html("#Foo")).toBe("<p>#Foo</p>");
+  });
+});
