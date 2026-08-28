@@ -47,4 +47,8 @@ describe("Leading spaces before the hash run [R-H-11]", () => {
   it("treats four leading spaces before # as a paragraph [E-20]", () => {
     expect(md2html("    # Hello")).toBe("<p>    # Hello</p>");
   });
+
+  it("strips three leading spaces and treats as a heading [E-19]", () => {
+    expect(md2html("   # Hello")).toBe("<h1>Hello</h1>");
+  });
 });
