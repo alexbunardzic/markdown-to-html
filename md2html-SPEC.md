@@ -149,6 +149,13 @@ Underline-style headings (`===` / `---` on the following line) are explicitly
 out of scope for `md2html` (see § Out of scope above). No test should rely on
 setext behaviour.
 
+**R-H-11 — At most three leading spaces allowed before the hash run**
+A heading line MAY be preceded by up to three ASCII spaces (U+0020). If the
+line has four or more leading spaces before the `#` run, it MUST NOT be treated
+as a heading; it MUST be treated as a paragraph. `   # Hello` (three spaces)
+produces `<h1>Hello</h1>`. `    # Hello` (four spaces) produces
+`<p>    # Hello</p>`.
+
 #### Edge cases
 
 Each row is normative and must have at least one corresponding test.

@@ -42,3 +42,9 @@ describe("Exactly one space required after the hashes", () => {
     expect(md2html("#Foo")).toBe("<p>#Foo</p>");
   });
 });
+
+describe("Leading spaces before the hash run [R-H-11]", () => {
+  it("treats four leading spaces before # as a paragraph [E-20]", () => {
+    expect(md2html("    # Hello")).toBe("<p>    # Hello</p>");
+  });
+});
