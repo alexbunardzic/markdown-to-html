@@ -42,3 +42,21 @@ describe("Exactly one space required after the hashes", () => {
     expect(md2html("#Foo")).toBe("<p>#Foo</p>");
   });
 });
+
+describe("Hashes must start the line", () => {
+  it("treats a hash run inside a line as a paragraph [R-H-01]", () => {
+    expect(md2html("a # b")).toBe("<p>a # b</p>");
+  });
+});
+
+describe("A heading occupies exactly one line", () => {
+  it("converts a heading followed immediately by a paragraph [R-H-08, E-14]", () => {
+    expect(md2html("# Title\nParagraph")).toBe("<h1>Title</h1><p>Paragraph</p>");
+  });
+});
+
+describe("Blank lines separate blocks", () => {
+  it("emits no element for a blank line between blocks", () => {
+    expect(md2html("# A\n\n# B")).toBe("<h1>A</h1><h1>B</h1>");
+  });
+});
