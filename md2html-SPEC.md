@@ -137,6 +137,8 @@ dictates).
 **R-H-08 — Heading occupies exactly one line**
 A heading is always a single line. The content ends at the newline character.
 There is no multi-line heading syntax in scope for `md2html`.
+When multiple lines are present, each line is converted to its own HTML element
+and the resulting elements are concatenated without any separator between them.
 
 **R-H-09 — No inline markup processed inside headings (current scope)**
 Inline formatting features (bold, italic, inline code, links) inside heading

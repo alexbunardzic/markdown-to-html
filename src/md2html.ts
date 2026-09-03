@@ -14,7 +14,7 @@
 const HEADING = /^ {0,3}(#+) (.*)$/;
 
 export function md2html(markdown: string): string {
-  return markdown.split("\n").map(convertLine).join("\n");
+  return markdown.split("\n").map(convertLine).join("");
 }
 
 function convertLine(line: string): string {

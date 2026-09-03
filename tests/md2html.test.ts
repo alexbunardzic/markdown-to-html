@@ -46,7 +46,7 @@ describe("All six heading levels in one document [R-H-01]", () => {
       "<h4>Heading Four</h4>",
       "<h5>Heading Five</h5>",
       "<h6>Heading Six</h6>",
-    ].join("\n");
+    ].join("");
 
     expect(md2html(input)).toBe(expected);
   });
