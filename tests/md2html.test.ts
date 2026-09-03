@@ -28,6 +28,30 @@ describe("Markdown level to HTML element", () => {
   });
 });
 
+describe("All six heading levels in one document [R-H-01]", () => {
+  it("converts each heading level when all six appear in the same text", () => {
+    const input = [
+      "# Heading One",
+      "## Heading Two",
+      "### Heading Three",
+      "#### Heading Four",
+      "##### Heading Five",
+      "###### Heading Six",
+    ].join("\n");
+
+    const expected = [
+      "<h1>Heading One</h1>",
+      "<h2>Heading Two</h2>",
+      "<h3>Heading Three</h3>",
+      "<h4>Heading Four</h4>",
+      "<h5>Heading Five</h5>",
+      "<h6>Heading Six</h6>",
+    ].join("\n");
+
+    expect(md2html(input)).toBe(expected);
+  });
+});
+
 describe("Long runs of hashes", () => {
   // NOTE: this contradicts R-H-03 / E-01, which require a paragraph here.
   // Documents current behaviour at the mob's direction; the spec has not
