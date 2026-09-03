@@ -14,9 +14,13 @@
 const HEADING = /^ {0,3}(#+) (.*)$/;
 
 export function md2html(markdown: string): string {
-  const match = HEADING.exec(markdown);
+  return markdown.split("\n").map(convertLine).join("\n");
+}
+
+function convertLine(line: string): string {
+  const match = HEADING.exec(line);
   if (match === null) {
-    return `<p>${escapeHtml(markdown)}</p>`;
+    return `<p>${escapeHtml(line)}</p>`;
   }
 
   const [, hashes = "", text = ""] = match;
