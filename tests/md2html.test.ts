@@ -51,6 +51,10 @@ describe("Special character escaping", () => {
   it("escapes less-than signs as &lt; in a heading [E-10]", () => {
     expect(md2html("# <script>")).toBe("<h1>&lt;script&gt;</h1>");
   });
+
+  it("escapes double quotes as &quot; in a heading [E-12]", () => {
+    expect(md2html('# Say "hi"')).toBe("<h1>Say &quot;hi&quot;</h1>");
+  });
 });
 
 describe("Leading spaces before the hash run [R-H-11]", () => {
