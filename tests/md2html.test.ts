@@ -47,6 +47,10 @@ describe("Special character escaping", () => {
   it("escapes an ampersand as &amp; in a paragraph [R-ESC-01]", () => {
     expect(md2html("Cats & dogs")).toBe("<p>Cats &amp; dogs</p>");
   });
+
+  it("escapes less-than signs as &lt; in a heading [E-10]", () => {
+    expect(md2html("# <script>")).toBe("<h1>&lt;script&gt;</h1>");
+  });
 });
 
 describe("Leading spaces before the hash run [R-H-11]", () => {
