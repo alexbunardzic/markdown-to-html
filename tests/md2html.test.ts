@@ -43,6 +43,12 @@ describe("Exactly one space required after the hashes", () => {
   });
 });
 
+describe("Special character escaping", () => {
+  it("escapes an ampersand as &amp; in a paragraph [R-ESC-01]", () => {
+    expect(md2html("Cats & dogs")).toBe("<p>Cats &amp; dogs</p>");
+  });
+});
+
 describe("Leading spaces before the hash run [R-H-11]", () => {
   it("treats four leading spaces before # as a paragraph [E-20]", () => {
     expect(md2html("    # Hello")).toBe("<p>    # Hello</p>");
