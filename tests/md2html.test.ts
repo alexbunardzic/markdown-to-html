@@ -81,6 +81,12 @@ describe("Special character escaping", () => {
   });
 });
 
+describe("Heading followed immediately by paragraph [R-H-08]", () => {
+  it("renders a heading and a paragraph when separated by a newline [E-14]", () => {
+    expect(md2html("# Title\nParagraph")).toBe("<h1>Title</h1><p>Paragraph</p>");
+  });
+});
+
 describe("Leading spaces before the hash run [R-H-11]", () => {
   it("treats four leading spaces before # as a paragraph [E-20]", () => {
     expect(md2html("    # Hello")).toBe("<p>    # Hello</p>");
