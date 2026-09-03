@@ -180,3 +180,20 @@ Each row is normative and must have at least one corresponding test.
 | E-16 | Multiple spaces between `#` and text               | `#     Foo`          | `<h1>Foo</h1>`                       | R-H-04  |
 | E-17 | Heading text that is a single character            | `# X`                | `<h1>X</h1>`                         | R-H-01  |
 | E-18 | Heading text with only digits                      | `# 42`               | `<h1>42</h1>`                        | R-H-01  |
+
+---
+
+### 2. Special character escaping
+
+Text that is emitted into the HTML output must not be able to change the
+document's structure. Characters that carry meaning in HTML are replaced with
+their entity form.
+
+#### Normative rules
+
+**R-ESC-01 — Ampersand escaped in paragraph text**
+Every `&` in paragraph text MUST be emitted as `&amp;`. `Cats & dogs`
+produces `<p>Cats &amp; dogs</p>`.
+
+The remaining HTML special characters (`<`, `>`, `"`) are not yet covered by a
+normative rule for paragraphs; see R-H-06 for the heading case.
