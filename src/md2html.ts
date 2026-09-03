@@ -7,7 +7,8 @@
  * Implemented so far: R-H-01 (level mapping), R-H-02 (a space must
  * follow the hash run), R-H-11 (at most three leading spaces allowed),
  * R-ESC-01 (ampersand escaped in paragraph text),
- * E-10 (less-than / greater-than escaped in heading text).
+ * E-10 (less-than / greater-than escaped in heading text),
+ * E-12 (double-quote escaped in heading text).
  * Anything that is not a heading falls back to a paragraph.
  */
 const HEADING = /^ {0,3}(#+) (.*)$/;
@@ -28,5 +29,6 @@ function escapeHtml(text: string): string {
   return text
     .replaceAll("&", "&amp;")   // R-ESC-01 — must come first
     .replaceAll("<", "&lt;")    // E-10
-    .replaceAll(">", "&gt;");   // E-10
+    .replaceAll(">", "&gt;")    // E-10
+    .replaceAll('"', "&quot;"); // E-12
 }
