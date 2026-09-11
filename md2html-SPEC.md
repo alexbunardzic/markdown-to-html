@@ -199,3 +199,5 @@ produces `<p>Cats &amp; dogs</p>`.
 
 The remaining HTML special characters (`<`, `>`, `"`) are not yet covered by a
 normative rule for paragraphs; see R-H-06 for the heading case.
+
+More to come...
