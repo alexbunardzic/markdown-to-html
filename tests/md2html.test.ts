@@ -81,6 +81,12 @@ describe("Special character escaping", () => {
   });
 });
 
+describe("Hashes inside heading text [R-H-05]", () => {
+  it("keeps a hash that appears within the heading text [E-15]", () => {
+    expect(md2html("# C# language")).toBe("<h1>C# language</h1>");
+  });
+});
+
 describe("Heading followed immediately by paragraph [R-H-08]", () => {
   it("renders a heading and a paragraph when separated by a newline [E-14]", () => {
     expect(md2html("# Title\nParagraph")).toBe("<h1>Title</h1><p>Paragraph</p>");
