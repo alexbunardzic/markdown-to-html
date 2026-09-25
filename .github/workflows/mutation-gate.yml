@@ -1,0 +1,16 @@
+name: mutation-gate
+# The suite already kills 6/6 mutants (score 100). This workflow makes CI REFUSE if that
+# ever stops being true: thresholds.break in stryker.config.json makes `stryker run` exit
+# non-zero below 90 — the score is read, not logged. A gate that reports and exits zero
+# is decorative.
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  mutation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "20", cache: npm }
+      - run: npm ci
+      - name: mutate, and refuse anything under the threshold
+        run: npx stryker run
