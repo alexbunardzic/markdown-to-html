@@ -99,6 +99,10 @@ describe("Paragraphs [R-P-01]", () => {
       "<p>First paragraph</p><p>Second paragraph</p>",
     );
   });
+
+  it("does not render a whitespace-only block as a paragraph", () => {
+    expect(md2html("First paragraph\n\n   ")).toBe("<p>First paragraph</p>");
+  });
 });
 
 describe("Leading spaces before the hash run [R-H-11]", () => {
