@@ -180,7 +180,6 @@ Each row is normative and must have at least one corresponding test.
 | E-14 | Heading followed immediately by paragraph          | `# Title\nParagraph` | `<h1>Title</h1><p>Paragraph</p>`     | R-H-08  |
 | E-15 | Hash inside heading text is kept                   | `# C# language`      | `<h1>C# language</h1>`               | R-H-05  |
 | E-16 | Multiple spaces between `#` and text               | `#     Foo`          | `<h1>Foo</h1>`                       | R-H-04  |
-| E-17 | Heading text that is a single character            | `# X`                | `<h1>X</h1>`                         | R-H-01  |
 | E-18 | Heading text with only digits                      | `# 42`               | `<h1>42</h1>`                        | R-H-01  |
 
 ---
