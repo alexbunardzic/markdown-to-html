@@ -192,6 +192,11 @@ separate `<p>` elements. For example,
 `First paragraph\n\nSecond paragraph` produces
 `<p>First paragraph</p><p>Second paragraph</p>`.
 
+**R-P-02 — Whitespace-only blocks are ignored**
+A text block containing only space characters MUST be treated as blank and
+MUST NOT produce a `<p>` element. For example,
+`First paragraph\n\n   ` produces `<p>First paragraph</p>`.
+
 ---
 
 ### 3. Special character escaping
