@@ -16,7 +16,7 @@ const HEADING = /^ {0,3}(#+) (.*)$/;
 export function md2html(markdown: string): string {
   return markdown
     .split(/\r?\n/)
-    .filter((line) => line !== "")
+    .filter((line) => line.trim() !== "")
     .map(convertLine)
     .join("");
 }
