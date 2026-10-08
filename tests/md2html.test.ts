@@ -93,6 +93,14 @@ describe("Heading followed immediately by paragraph [R-H-08]", () => {
   });
 });
 
+describe("Paragraphs [R-P-01]", () => {
+  it("renders text blocks separated by a blank line as separate paragraphs", () => {
+    expect(md2html("First paragraph\n\nSecond paragraph")).toBe(
+      "<p>First paragraph</p><p>Second paragraph</p>",
+    );
+  });
+});
+
 describe("Leading spaces before the hash run [R-H-11]", () => {
   it("treats four leading spaces before # as a paragraph [E-20]", () => {
     expect(md2html("    # Hello")).toBe("<p>    # Hello</p>");
