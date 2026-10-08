@@ -183,7 +183,18 @@ Each row is normative and must have at least one corresponding test.
 
 ---
 
-### 2. Special character escaping
+### 2. Paragraphs
+
+**R-P-01 — Blank lines separate paragraphs**
+A text block is a line of text ended by a normal newline (Return/Enter). When
+text blocks are separated by one or more blank lines, they MUST be rendered as
+separate `<p>` elements. For example,
+`First paragraph\n\nSecond paragraph` produces
+`<p>First paragraph</p><p>Second paragraph</p>`.
+
+---
+
+### 3. Special character escaping
 
 Text that is emitted into the HTML output must not be able to change the
 document's structure. Characters that carry meaning in HTML are replaced with
