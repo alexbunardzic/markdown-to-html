@@ -191,10 +191,6 @@ their entity form.
 
 #### Normative rules
 
-**R-ESC-01 — Ampersand escaped in paragraph text**
-Every `&` in paragraph text MUST be emitted as `&amp;`. `Cats & dogs`
-produces `<p>Cats &amp; dogs</p>`.
-
 The remaining HTML special characters (`<`, `>`, `"`) are not yet covered by a
 normative rule for paragraphs; see R-H-06 for the heading case.
 
