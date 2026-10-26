@@ -11,5 +11,10 @@
     "html"
   ],
   "coverageAnalysis": "perTest",
-  "tsconfigFile": "tsconfig.stryker-none.json"
+  "tsconfigFile": "tsconfig.stryker-none.json",
+  "thresholds": {
+    "high": 100,
+    "low": 95,
+    "break": 90
+  }
 }
